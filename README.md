@@ -31,10 +31,7 @@ The approach is to generate a 2D tensor that contains embeddings of the characte
 For the classification, the temporal resolution of the output of the convolution blocks is first down-sampled to a fixed dimension using k-max pooling in order to extract the k most important features independent of where they appear in the sentence.  The resulting features are transformed into a single vector, which is input to a three-layer, fully connected classifier with ReLU hidden units and softmax outputs.  For all of the experiments, k is set to 8 and the number of hidden units to 2048.
 Each convolution block is a sequence of two convolution layers with each one followed by a temporal BatchNorm layer and a ReLU activation.  The kernel size of all temporal convolutions is 3.  Between blocks, three types of down-sampling are tested, all of which reduce the temporal resolution by a factor of 2.  Refer to Figures 1 and 2 for a pictoral description of the architecture.
 
-![image.png](attachment:image.png)
-
-![image-2.png](attachment:image-2.png)
-
+![Conv Block](https://github.com/FatimaTahrirchi/NLP_Project_DS8008/blob/main/Images/Conv Block.png) [Model](https://github.com/FatimaTahrirchi/NLP_Project_DS8008/blob/main/Images/VDCNN.png)
 This paper explored four convolutional depths:  9, 17, 29, 49 (determined by summing the number of blocks with 64, 128, 256 and 512 filters, with each block containing two convolutional layers).  The observed outcomes is that the very deep network architectures performs better than the more shallower architectures.  In addition, those datasets with much more training samples (i.e. 3 million) markedly increased performance.  When the depth was increased from 9 to 49 layers, performance began dropping.  Although when using ‘shortcut’ connections in order to solve for the vanishing gradient issue, slightly improved results were observed across all depths.
 
 A number of datasets were tested that ranged from 120K to 3.6M instances and with classes between 2 to 14.  Notable conclusions were as follows:
