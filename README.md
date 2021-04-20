@@ -50,7 +50,3 @@ As indicated, given resource limitations, the first result in Table 1 serves as 
 
 The results of additional preprocessing were promising as the Table 1 illustrates and even at that with using traditional approaches with low complexity.  A notable outcome of this study is that while the solution architecture has been the central focus of innovating improvements in the text processing space.  Additional focus on determining whether additional, possibly more complex, preprocessing techniques may be well-placed when paired with effective solution architectures in order to further enhance performance by yielding additional, incremental benefit in performance. 
 
-# NLP_Project_DS8008
-The Final Project of NLP Course: 
-![Test Image 1](https://github.com/FatimaTahrirchi/NLP_Project_DS8008/blob/main/Images/Table2.png)
-
